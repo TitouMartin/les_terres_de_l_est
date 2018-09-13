@@ -1,6 +1,6 @@
 class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show]
-  before_action :artist_tracks, only: [:show]
+
 
   def index
     @artists = Artist.all
@@ -8,7 +8,6 @@ class ArtistsController < ApplicationController
 
   def show
     render :index unless @artist
-    @artist_tracks = artist_tracks
   end
 
 
@@ -22,10 +21,6 @@ class ArtistsController < ApplicationController
 
   def set_artist
     @artist = Artist.find(params[:id])
-  end
-
-  def artist_tracks
-    artist_tracks = Track.where(artist: @artist)
   end
 
 end

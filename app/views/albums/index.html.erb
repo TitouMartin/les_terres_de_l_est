@@ -1,14 +1,15 @@
 <ul>
   <% @albums.each do |album| %>
+  <img src=album.cover alt="album cover">
     <li><%= album.name %></li>
     <ul>
-      <% album.album_tracks.each do |track| %>
+      <% album.tracks.each do |track| %>
         <li><%= track.name %></li>
       <% end %>
     </ul>
 
     <ul>
-      <% album_artist.each do |artist| %>
+      <% album.artists.each do |artist| %>
         <li><%= artist.name %></li>
       <% end %>
     </ul>

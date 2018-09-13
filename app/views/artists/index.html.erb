@@ -1,6 +1,12 @@
 <ul>
   <% @artists.each do |artist|%>
     <li><%= artist.name %></li>
+    <% artist.albums.each do |album|%>
+      <li><%= album.name %></li>
+      <% album.tracks.each do |track| %>
+        <li>***<%= track.name %></li>
+      <% end %>
+    <% end %>
   <% end %>
 </ul>
 
