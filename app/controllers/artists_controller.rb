@@ -1,16 +1,14 @@
 class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show]
   before_action :artist_tracks, only: [:show]
-  before_action :artist_albums, only: [:show]
 
   def index
-    @artists = artists_sorted
+    @artists = Artist.all
   end
 
   def show
     render :index unless @artist
     @artist_tracks = artist_tracks
-    @artist_albums = artist_albums
   end
 
 
@@ -19,7 +17,7 @@ class ArtistsController < ApplicationController
 
 
   def sort_artists
-    artists_sorted = Artist.all.sort_by!{ |a| a.name.downcase }
+    artists_sorted = Artist.all
   end
 
   def set_artist
@@ -28,10 +26,6 @@ class ArtistsController < ApplicationController
 
   def artist_tracks
     artist_tracks = Track.where(artist: @artist)
-  end
-
-  def artist_albums
-    artist_albums = artist_tracks.album
   end
 
 end
