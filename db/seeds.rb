@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Track.destroy_all
+Album.destroy_all
+Artist.destroy_all
+
 
 20.times do
   Artist.create(
@@ -26,18 +30,20 @@ puts 'artists created'
     stock: rand(10...100),
     description: Faker::MichaelScott.quote
   )
-  print '.'
-end
-puts 'albums created'
+  print '🎧'
 
-100.times do
-  Track.create(
+  4.times do
+    Track.create(
     name: Faker::LordOfTheRings.character,
     description: Faker::HarryPotter.quote,
-    album: Album.all.sample,
+    album: Album.last,
     artist: Artist.all.sample
   )
+  print '🎼'
+  end
+  puts '4 tracks created'
 
-  print '.'
 end
-puts 'tracks created'
+puts '20 albums created'
+
+
