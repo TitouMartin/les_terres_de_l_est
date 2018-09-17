@@ -1,11 +1,13 @@
 <ul>
   <% @artists.each do |artist|%>
     <li><%= artist.name %></li>
-    <% artist.albums.each do |album|%>
-      <li><%= album.name %></li>
-      <% album.tracks.each do |track| %>
-        <li>***<%= track.name %></li>
-      <% end %>
+    <% artist.albums.each do |album| %>
+      <li style="color: #666;"><%= album.name %></li>
+    <% end %>
+
+    <% artist.tracks.each do |track|%>
+      <li>--><%= track.name %></li>
+      <li style="color: #666;">** <%= track.album.name %></li>
     <% end %>
   <% end %>
 </ul>

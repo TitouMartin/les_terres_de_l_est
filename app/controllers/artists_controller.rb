@@ -4,6 +4,11 @@ class ArtistsController < ApplicationController
 
   def index
     @artists = Artist.all
+
+# -- delete doublons in artists albums
+    def artist_albums
+      artist_albums = artist.album.flattens
+    end
   end
 
   def show

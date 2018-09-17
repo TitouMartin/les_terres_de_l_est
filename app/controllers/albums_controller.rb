@@ -4,6 +4,7 @@ class AlbumsController < ApplicationController
 
   def index
     @albums = @albums_sorted
+
   end
 
   def show
