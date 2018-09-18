@@ -1,0 +1,15 @@
+<ul>
+  <% @artists.each do |artist|%>
+    <li>😎<%= artist.name %></li>
+    <% artist.artist_albums.each do |album| %>
+      <li style="color: #666;">🎧<%= album.name %></li>
+        <% album.tracks.each do |track| %>
+          <li>🎼<%= track.name %></li>
+        <% end %>
+    <% end %>
+
+
+  <% end %>
+</ul>
+
+

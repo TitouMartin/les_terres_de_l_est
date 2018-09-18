@@ -1,0 +1,12 @@
+<ul>
+  <% @albums.each do |album| %>
+    <li>🎧<%= album.name %></li>
+    <% album.tracks.each do |track| %>
+      🎼<%= track.name %></li>
+    <% end %>
+    </ul>
+  <% end %>
+</ul>
+
+<p>------------------------</p>
+<%= Album.count %>

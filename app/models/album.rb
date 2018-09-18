@@ -1,7 +1,9 @@
 class Album < ApplicationRecord
-  has_many :tracks
+# -- associations
+  has_many :tracks, dependent: :destroy
   has_many :artists, through: :tracks
-  validates :name, presence: true, uniqueness: true
+# -- validations
+  validates :name, presence: true
   validates :cover, presence: true
   validates :description, presence: true
 end

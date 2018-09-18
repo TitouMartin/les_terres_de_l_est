@@ -1,0 +1,16 @@
+<%= @artist.name %>
+
+<ul>
+  <% @artist_tracks.each do |track|%>
+    <li><%= track.name %></li>
+  <% end %>
+</ul>
+
+
+<ul>
+  <% @artist_tracks.each do |track|%>
+    <li><%= track.album.name %></li>
+  <% end %>
+</ul>
+
+
