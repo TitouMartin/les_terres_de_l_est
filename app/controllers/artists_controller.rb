@@ -6,9 +6,12 @@ class ArtistsController < ApplicationController
     @artists = Artist.all
 
 # -- delete doublons in artists albums
-    def artist_albums
-      artist_albums = artist.album.flattens
-    end
+    # @artist_albums = []
+    # Artist.all.each do |artist|
+    #   artist.albums.each do |album|
+    #     @artist_albums << album
+    #   end
+    # end
   end
 
   def show

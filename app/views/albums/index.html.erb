@@ -1,19 +1,12 @@
 <ul>
   <% @albums.each do |album| %>
-  <img src=album.cover alt="album cover">
-    <li><%= album.name %></li>
-    <ul>
-      <% album.tracks.each do |track| %>
-        <li><%= track.name %></li>
-      <% end %>
+    <li>🎧<%= album.name %></li>
+    <% album.tracks.each do |track| %>
+      🎼<%= track.name %></li>
+    <% end %>
     </ul>
-
-    <ul>
-      <% album.artists.each do |artist| %>
-        <li><%= artist.name %></li>
-      <% end %>
-    </ul>
-
   <% end %>
 </ul>
 
+<p>------------------------</p>
+<%= Album.count %>

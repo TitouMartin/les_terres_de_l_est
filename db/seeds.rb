@@ -22,7 +22,6 @@ print Arists
 puts ' artists remaining'
 sleep(1)
 
-
 20.times do
   Artist.create(
     name: Faker::GameOfThrones.character,
@@ -30,7 +29,6 @@ sleep(1)
     description: Faker::GameOfThrones.quote
   )
   puts '😎'
-
   random = rand(1..3)
   random.times do
     Album.create(
@@ -56,8 +54,11 @@ sleep(1)
   end
   print random
   puts' albums created'
-  sleep(1)
+  # sleep(1)
 end
+
+p Album.count
+puts ' albums created'
 p '> done '
 
 
