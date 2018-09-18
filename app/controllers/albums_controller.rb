@@ -1,4 +1,5 @@
 class AlbumsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :sort_albums, only: [:index]
   before_action :set_album, only: [:show]
 
